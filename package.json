@@ -1,0 +1,48 @@
+{
+  "name": "markdown-docs",
+  "version": "0.0.1",
+  "description": "Generate static sites from markdown files",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --progress --colors",
+    "watch": "webpack --progress --colors --watch",
+    "generate": "node ./lib/cli/index.js build --source ./wiki"
+  },
+  "keywords": [
+    "cute",
+    "file",
+    "browser",
+    "files"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tom-Alexander/markdown-docs"
+  },
+  "author": {
+    "name": "Tom Alexander",
+    "email": "me@tomalexander.co.nz"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "flummox": "^4.0.0-alpha",
+    "fs-extra": "^0.18.2",
+    "handlebars": "^3.0.2",
+    "highlight.js": "^8.5.0",
+    "marked": "^0.3.3",
+    "material-ui": "^0.7.4",
+    "minimist": "^1.1.1",
+    "react": "^0.13.2",
+    "react-router": "^0.13.2",
+    "react-tap-event-plugin": "^0.1.6"
+  },
+  "devDependencies": {
+    "webpack": "^1.8.9",
+    "babel-core": "^5.1.11",
+    "babel-loader": "^5.0.0"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "markdown-docs": "node ./lib/cli/index.js"
+  }
+}
