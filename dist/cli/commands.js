@@ -26,7 +26,7 @@ var _Handlebars = require('Handlebars');
 
 var _Handlebars2 = _interopRequireDefault(_Handlebars);
 
-var templatePath = _path2['default'].join(__dirname, 'template.hbs');
+var templatePath = _path2['default'].join(__dirname, '../../lib/cli/template.hbs');
 _Promise2['default'].promisifyAll(_fs2['default']);
 
 var commands = {
@@ -65,7 +65,7 @@ var commands = {
   },
 
   _write: function _write(source, destination, html) {
-    return _fs2['default'].ensureDirAsync(destination).then(_fs2['default'].copyAsync(source, _path2['default'].join(destination, 'source'))).then(_fs2['default'].writeFileAsync(_path2['default'].join(destination, 'index.html'), html)).then(_fs2['default'].copyAsync(_path2['default'].join(__dirname, '../../dist'), destination));
+    return _fs2['default'].ensureDirAsync(destination).then(_fs2['default'].copyAsync(source, _path2['default'].join(destination, 'source'))).then(_fs2['default'].writeFileAsync(_path2['default'].join(destination, 'index.html'), html)).then(_fs2['default'].copyAsync(_path2['default'].join(__dirname, '../../dist/client'), destination));
   },
 
   _watch: function _watch(source, cb) {

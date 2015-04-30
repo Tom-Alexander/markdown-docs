@@ -79,7 +79,7 @@ var Indexer = (function () {
         }).then(function (title) {
           _this2._addDocumentFromPath({
             fileName: document.file,
-            path: document.location,
+            path: document.location.replace(/(\\)/g, '/'),
             title: title
           });
         });
@@ -96,7 +96,6 @@ var Indexer = (function () {
   }, {
     key: '_addDocumentFromPath',
     value: function _addDocumentFromPath(document) {
-
       var sourcePath = '';
       var destinationPath = this._destinationRoot;
 

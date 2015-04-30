@@ -15,8 +15,6 @@ var _commands = require("./commands");
 
 var _commands2 = _interopRequireDefault(_commands);
 
-var minimist = require("");
-
 var run = function run() {
   var args = _minimist2["default"](process.argv.slice(2));
   var command = args._[0];
