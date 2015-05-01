@@ -1,10 +1,10 @@
 'use strict';
 
-var _interopRequireDefault = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
-
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+
+var _interopRequireDefault = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
 
 var _path = require('path');
 
@@ -22,7 +22,7 @@ var _Indexer = require('./Indexer');
 
 var _Indexer2 = _interopRequireDefault(_Indexer);
 
-var _Handlebars = require('Handlebars');
+var _Handlebars = require('handlebars');
 
 var _Handlebars2 = _interopRequireDefault(_Handlebars);
 
