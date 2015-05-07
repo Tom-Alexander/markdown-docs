@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --progress --colors",
     "watch": "webpack --progress --colors --watch",
-    "generate": "node ./lib/cli/index.js build --source ./wiki"
+    "generate": "node ./lib/cli/index.js build --destination ./_site --source ./_source"
   },
   "repository": {
     "type": "git",
