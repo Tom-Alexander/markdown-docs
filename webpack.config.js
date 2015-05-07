@@ -5,7 +5,7 @@ var config = {
     standalone: "./lib/components/standalone.js"
   },
   output: {
-    path: 'dist',
+    path: 'dist/client',
     filename: "[name].js",
     chunkFilename: "[id].js"
   },

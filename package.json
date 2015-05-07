@@ -1,10 +1,11 @@
 {
   "name": "markdown-docs",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Static site generator for markdown",
-  "main": "./lib/cli/index.js",
+  "main": "./dist/cli/index.js",
   "scripts": {
-    "build": "webpack --progress --colors",
+    "build:server": "babel ./lib/cli/ --out-dir ./dist/cli",
+    "build:client": "webpack --progress --colors",
     "watch": "webpack --progress --colors --watch",
     "generate": "node ./lib/cli/index.js build --destination ./_site --source ./_source"
   },
@@ -25,6 +26,7 @@
     "fs-extra": "^0.18.2",
     "handlebars": "^3.0.2",
     "highlight.js": "^8.5.0",
+    "isomorphic-fetch": "^2.0.2",
     "marked": "^0.3.3",
     "minimist": "^1.1.1",
     "react": "^0.13.2",
@@ -37,6 +39,6 @@
   },
   "preferGlobal": true,
   "bin": {
-    "markdown-docs": "./lib/cli/index.js"
+    "markdown-docs": "./dist/cli/index.js"
   }
 }
