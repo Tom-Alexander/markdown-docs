@@ -32,6 +32,7 @@
     "react-tap-event-plugin": "^0.1.6"
   },
   "devDependencies": {
+    "uglify-loader": "^1.2.0",
     "webpack": "^1.8.9"
   },
   "preferGlobal": true,
