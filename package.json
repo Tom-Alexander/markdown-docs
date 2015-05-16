@@ -26,12 +26,12 @@
     "fs-extra": "^0.18.2",
     "handlebars": "^3.0.2",
     "highlight.js": "^8.5.0",
-    "isomorphic-fetch": "^2.0.2",
     "marked": "^0.3.3",
     "minimist": "^1.1.1",
     "react": "^0.13.2",
     "react-router": "^0.13.2",
-    "react-tap-event-plugin": "^0.1.6"
+    "react-tap-event-plugin": "^0.1.6",
+    "whatwg-fetch": "^0.8.1"
   },
   "devDependencies": {
     "uglify-loader": "^1.2.0",
