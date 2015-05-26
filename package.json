@@ -1,6 +1,6 @@
 {
   "name": "markdown-docs",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Static site generator for markdown",
   "main": "./dist/cli/index.js",
   "scripts": {
