@@ -1,14 +1,14 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
+var _interopRequireDefault = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
+
+var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 
 var _fs = require('fs');
 
@@ -22,15 +22,15 @@ var _marked = require('marked');
 
 var _marked2 = _interopRequireDefault(_marked);
 
-var _bluebird = require('bluebird');
+var _Promise = require('bluebird');
 
-var _bluebird2 = _interopRequireDefault(_bluebird);
+var _Promise2 = _interopRequireDefault(_Promise);
 
 var _Directory = require('./Directory');
 
 var _Directory2 = _interopRequireDefault(_Directory);
 
-_bluebird2['default'].promisifyAll(_fs2['default']);
+_Promise2['default'].promisifyAll(_fs2['default']);
 var readFileAsync = _fs2['default'].readFileAsync;
 
 var Indexer = (function () {

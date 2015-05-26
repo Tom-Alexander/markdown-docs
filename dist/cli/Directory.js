@@ -1,26 +1,26 @@
 'use strict';
 
+var _interopRequireDefault = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
+
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _fsExtra = require('fs-extra');
+var _fs = require('fs-extra');
 
-var _fsExtra2 = _interopRequireDefault(_fsExtra);
+var _fs2 = _interopRequireDefault(_fs);
 
-var _bluebird = require('bluebird');
+var _Promise = require('bluebird');
 
-var _bluebird2 = _interopRequireDefault(_bluebird);
+var _Promise2 = _interopRequireDefault(_Promise);
 
-_bluebird2['default'].promisifyAll(_fsExtra2['default']);
-var readdirAsync = _fsExtra2['default'].readdirAsync;
-var statAsync = _fsExtra2['default'].statAsync;
+_Promise2['default'].promisifyAll(_fs2['default']);
+var readdirAsync = _fs2['default'].readdirAsync;
+var statAsync = _fs2['default'].statAsync;
 
 /**
  * Asynchronous directory traversal using bluebird

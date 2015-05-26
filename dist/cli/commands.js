@@ -1,33 +1,33 @@
 'use strict';
 
+var _interopRequireDefault = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
+
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _fsExtra = require('fs-extra');
+var _fs = require('fs-extra');
 
-var _fsExtra2 = _interopRequireDefault(_fsExtra);
+var _fs2 = _interopRequireDefault(_fs);
 
-var _bluebird = require('bluebird');
+var _Promise = require('bluebird');
 
-var _bluebird2 = _interopRequireDefault(_bluebird);
+var _Promise2 = _interopRequireDefault(_Promise);
 
 var _Indexer = require('./Indexer');
 
 var _Indexer2 = _interopRequireDefault(_Indexer);
 
-var _handlebars = require('handlebars');
+var _Handlebars = require('handlebars');
 
-var _handlebars2 = _interopRequireDefault(_handlebars);
+var _Handlebars2 = _interopRequireDefault(_Handlebars);
 
 var templatePath = _path2['default'].join(__dirname, '../../lib/cli/template.hbs');
-_bluebird2['default'].promisifyAll(_fsExtra2['default']);
+_Promise2['default'].promisifyAll(_fs2['default']);
 
 var commands = {
 
@@ -48,7 +48,7 @@ var commands = {
   },
 
   _unknown: function _unknown() {
-    return new _bluebird2['default'](function (resolve) {
+    return new _Promise2['default'](function (resolve) {
       console.log('Unknown command!');
       resolve();
     });
@@ -57,19 +57,19 @@ var commands = {
   _render: function _render(source) {
     var indexer = new _Indexer2['default'](source);
     return indexer.run().then(function (data) {
-      return _fsExtra2['default'].readFileAsync(templatePath, 'utf8').then(function (template) {
+      return _fs2['default'].readFileAsync(templatePath, 'utf8').then(function (template) {
         var variables = { gon: JSON.stringify({ directory: data }) };
-        return _handlebars2['default'].compile(template)(variables);
+        return _Handlebars2['default'].compile(template)(variables);
       });
     });
   },
 
   _write: function _write(source, destination, html) {
-    return _fsExtra2['default'].ensureDirAsync(destination).then(_fsExtra2['default'].copyAsync(source, _path2['default'].join(destination, 'source'))).then(_fsExtra2['default'].writeFileAsync(_path2['default'].join(destination, 'index.html'), html)).then(_fsExtra2['default'].copyAsync(_path2['default'].join(__dirname, '../../dist/client'), destination));
+    return _fs2['default'].ensureDirAsync(destination).then(_fs2['default'].copyAsync(source, _path2['default'].join(destination, 'source'))).then(_fs2['default'].writeFileAsync(_path2['default'].join(destination, 'index.html'), html)).then(_fs2['default'].copyAsync(_path2['default'].join(__dirname, '../../dist/client'), destination));
   },
 
   _watch: function _watch(source, cb) {
-    return new _bluebird2['default'](function (resolve) {
+    return new _Promise2['default'](function (resolve) {
       chokidar.watch(source, {}).on('all', cb);
       resolve();
     });
